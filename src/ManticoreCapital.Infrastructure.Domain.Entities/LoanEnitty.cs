@@ -1,0 +1,17 @@
+﻿namespace ManticoreCapital.Infrastructure.Domain.Entities
+{
+    public class LoanEnitty
+    {
+        // informacion sobre prestamos
+        public string Id { get; set; }
+        public string AccountId { get; set; }
+        public string LoanType { get; set; }
+        public decimal Principal { get; set; }
+        public decimal InterestRate { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public string Status { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
+    }
+}

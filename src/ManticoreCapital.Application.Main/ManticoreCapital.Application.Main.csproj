@@ -6,4 +6,42 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ManticoreCapital.Transversal.Interfaces\ManticoreCapital.Transversal.Interfaces.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="AccountUseCase\Commands\Handler\" />
+    <Folder Include="AccountUseCase\Dtos\" />
+    <Folder Include="AccountUseCase\Queries\Handler\" />
+    <Folder Include="BranchUseCase\Commands\Handler\" />
+    <Folder Include="BranchUseCase\Dtos\" />
+    <Folder Include="BranchUseCase\Queries\Handler\" />
+    <Folder Include="CardUseCase\Commands\Handler\" />
+    <Folder Include="CardUseCase\Dtos\" />
+    <Folder Include="CardUseCase\Queries\Handler\" />
+    <Folder Include="CustomerUseCase\Commands\Handler\" />
+    <Folder Include="CustomerUseCase\Dtos\" />
+    <Folder Include="CustomerUseCase\Queries\Handler\" />
+    <Folder Include="EmployeeUseCase\Commands\Handler\" />
+    <Folder Include="EmployeeUseCase\Dtos\" />
+    <Folder Include="EmployeeUseCase\Queries\Handler\" />
+    <Folder Include="LoanUseCase\Commands\Handler\" />
+    <Folder Include="LoanUseCase\Dtos\" />
+    <Folder Include="LoanUseCase\Queries\Handler\" />
+    <Folder Include="PaymentUseCase\Commands\Handler\" />
+    <Folder Include="PaymentUseCase\Dtos\" />
+    <Folder Include="PaymentUseCase\Queries\Handler\" />
+    <Folder Include="ReportUseCase\Commands\Handler\" />
+    <Folder Include="ReportUseCase\Dtos\" />
+    <Folder Include="ReportUseCase\Queries\Handler\" />
+    <Folder Include="Transaction\Commands\Handler\" />
+    <Folder Include="Transaction\Dtos\" />
+    <Folder Include="Transaction\Queries\Handler\" />
+  </ItemGroup>
+
 </Project>

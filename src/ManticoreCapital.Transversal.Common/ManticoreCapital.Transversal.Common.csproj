@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ManticoreCapital.Transversal.Interfaces\ManticoreCapital.Transversal.Interfaces.csproj" />
+  </ItemGroup>
+
 </Project>
