@@ -1,6 +1,6 @@
 ﻿namespace ManticoreCapital.Infrastructure.Domain.Entities
 {
-    public class LoanEnitty
+    public class LoanEntity
     {
         // informacion sobre prestamos
         public string Id { get; set; }

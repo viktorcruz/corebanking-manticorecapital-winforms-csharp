@@ -1,6 +1,6 @@
 ﻿namespace ManticoreCapital.Infrastructure.Domain.Entities
 {
-    public class AuditLog
+    public class AuditLogEntity
     {
         // registro de auditoria
         public string LogId { get; set; }
