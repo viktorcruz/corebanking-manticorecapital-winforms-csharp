@@ -8,10 +8,10 @@
         public string LoanType { get; set; }
         public decimal Principal { get; set; }
         public decimal InterestRate { get; set; }
+        public string Status { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public string Status { get; set; }
         public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
+        public DateTime? LastUpdatedAt { get; set; }
     }
 }

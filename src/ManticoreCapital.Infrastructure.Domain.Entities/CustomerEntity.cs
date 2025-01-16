@@ -8,8 +8,8 @@
         public string FullName { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
-        public DateOnly DateBirth { get; set; } 
-        public DateTime CreatedAd { get; set; }
-        public DateTime UpdatedAd { get; set;}
+        public DateTime DateBirth { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime? LastUpdatedAt { get; set; }
     }
 }
