@@ -11,6 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ManticoreCapital.Infrastructure.Interfaces\ManticoreCapital.Infrastructure.Interfaces.csproj" />
+    <ProjectReference Include="..\ManticoreCapital.Infrastructure.IoC\ManticoreCapital.Infrastructure.IoC.csproj" />
+    <ProjectReference Include="..\ManticoreCapital.Infrastructure.Repository\ManticoreCapital.Infrastructure.Repositories.csproj" />
     <ProjectReference Include="..\ManticoreCapital.Transversal.Interfaces\ManticoreCapital.Transversal.Interfaces.csproj" />
   </ItemGroup>
 

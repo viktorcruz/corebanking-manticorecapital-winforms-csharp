@@ -9,37 +9,37 @@ using System.Threading.Tasks;
 
 namespace ManticoreCapital.Infrastructure.Repositories.AdoNet
 {
-    public class UserRepositoryAdoNet : IUserRepository
+    public class AccountRepositoryAdoNet : IAccountRepository
     {
         private readonly ISqlConnectionFactory _connectionFactory;
         private readonly string CONNECTION_STRING = "Wagner";
 
-        public UserRepositoryAdoNet(ISqlConnectionFactory connectionFactory)
+        public AccountRepositoryAdoNet(ISqlConnectionFactory connectionFactory)
         {
             _connectionFactory = connectionFactory;
         }
 
-        public Task<IDatabaseActionResponse> CreateUserAsync(UserEntity user)
+        public Task<IDatabaseActionResponse> CreateAccountAsync(AccountEntity account)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IDatabaseActionResponse> DeleteUserAsync(string userId)
+        public Task<IDatabaseActionResponse> DeleteAccountAsync(string accountId)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IDatabaseOperationResult<UserEntity>> GetUserByIdAsync(string userId)
+        public Task<IDatabaseOperationResult<AccountEntity>> GetAccountByIdAsync(string accountId)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IDatabaseOperationResult<List<UserEntity>>> GetUserPaginatedAsync(int pageNumber, int pageSize, string? search)
+        public Task<IDatabaseOperationResult<List<AccountEntity>>> GetAccountPaginatedAsync(int pageNumber, int pageSize, string? search)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IDatabaseActionResponse> UpdateUserAsync(UserEntity user)
+        public Task<IDatabaseActionResponse> UpdateAccountAsync(AccountEntity account)
         {
             throw new NotImplementedException();
         }

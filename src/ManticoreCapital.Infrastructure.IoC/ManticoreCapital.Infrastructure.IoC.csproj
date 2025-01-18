@@ -7,14 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Dapper" Version="2.1.35" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.1" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ManticoreCapital.Infrastructure.Data\ManticoreCapital.Infrastructure.Data.csproj" />
     <ProjectReference Include="..\ManticoreCapital.Infrastructure.Interfaces\ManticoreCapital.Infrastructure.Interfaces.csproj" />
+    <ProjectReference Include="..\ManticoreCapital.Infrastructure.Repository\ManticoreCapital.Infrastructure.Repositories.csproj" />
   </ItemGroup>
 
 </Project>

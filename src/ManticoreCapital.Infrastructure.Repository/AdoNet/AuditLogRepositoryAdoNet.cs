@@ -9,37 +9,38 @@ using System.Threading.Tasks;
 
 namespace ManticoreCapital.Infrastructure.Repositories.AdoNet
 {
-    public class UserRepositoryAdoNet : IUserRepository
+    public class AuditLogRepositoryAdoNet : IAuditLogRepository
     {
         private readonly ISqlConnectionFactory _connectionFactory;
         private readonly string CONNECTION_STRING = "Wagner";
 
-        public UserRepositoryAdoNet(ISqlConnectionFactory connectionFactory)
+        public AuditLogRepositoryAdoNet(ISqlConnectionFactory connectionFactory)
         {
             _connectionFactory = connectionFactory;
         }
 
-        public Task<IDatabaseActionResponse> CreateUserAsync(UserEntity user)
+
+        public Task<IDatabaseActionResponse> CreateAuditLogAsync(AuditLogEntity audit)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IDatabaseActionResponse> DeleteUserAsync(string userId)
+        public Task<IDatabaseActionResponse> DeleteAuditLogAsync(string auditId)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IDatabaseOperationResult<UserEntity>> GetUserByIdAsync(string userId)
+        public Task<IDatabaseOperationResult<AuditLogEntity>> GetAuditLogByIdAsycn(AuditLogEntity audit)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IDatabaseOperationResult<List<UserEntity>>> GetUserPaginatedAsync(int pageNumber, int pageSize, string? search)
+        public Task<IDatabaseOperationResult<List<AuditLogEntity>>> GetAuditLogPaginatedAsync(int pageNumber, int pageSize, string? search)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IDatabaseActionResponse> UpdateUserAsync(UserEntity user)
+        public Task<IDatabaseActionResponse> UpdateAuditLogAsync(AuditLogEntity audit)
         {
             throw new NotImplementedException();
         }

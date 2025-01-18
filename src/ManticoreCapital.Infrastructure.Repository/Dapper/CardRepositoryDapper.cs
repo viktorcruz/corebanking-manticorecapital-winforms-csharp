@@ -7,39 +7,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManticoreCapital.Infrastructure.Repositories.AdoNet
+namespace ManticoreCapital.Infrastructure.Repositories.Dapper
 {
-    public class UserRepositoryAdoNet : IUserRepository
+    public class CardRepositoryDapper : ICardRepository
     {
         private readonly ISqlConnectionFactory _connectionFactory;
         private readonly string CONNECTION_STRING = "Wagner";
-
-        public UserRepositoryAdoNet(ISqlConnectionFactory connectionFactory)
+        public CardRepositoryDapper(ISqlConnectionFactory connectionFactory)
         {
             _connectionFactory = connectionFactory;
         }
-
-        public Task<IDatabaseActionResponse> CreateUserAsync(UserEntity user)
+        public Task<IDatabaseActionResponse> CreateCardAsync(CardEntity card)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IDatabaseActionResponse> DeleteUserAsync(string userId)
+        public Task<IDatabaseActionResponse> DeleteCardAsync(string cardId)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IDatabaseOperationResult<UserEntity>> GetUserByIdAsync(string userId)
+        public Task<IDatabaseOperationResult<CardEntity>> GetCardByIdAsync(string cardId)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IDatabaseOperationResult<List<UserEntity>>> GetUserPaginatedAsync(int pageNumber, int pageSize, string? search)
+        public Task<IDatabaseOperationResult<List<CardEntity>>> GetCardPaginatedAsync(int pageNumber, int pageSize, string? search)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IDatabaseActionResponse> UpdateUserAsync(UserEntity user)
+        public Task<IDatabaseActionResponse> UpdateCardAsync(CardEntity card)
         {
             throw new NotImplementedException();
         }

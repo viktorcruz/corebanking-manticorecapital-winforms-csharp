@@ -9,37 +9,36 @@ using System.Threading.Tasks;
 
 namespace ManticoreCapital.Infrastructure.Repositories.AdoNet
 {
-    public class UserRepositoryAdoNet : IUserRepository
+    public class LoanRepositoryAdoNet : ILoanRepository
     {
         private readonly ISqlConnectionFactory _connectionFactory;
         private readonly string CONNECTION_STRING = "Wagner";
 
-        public UserRepositoryAdoNet(ISqlConnectionFactory connectionFactory)
+        public LoanRepositoryAdoNet(ISqlConnectionFactory connectionFactory)
         {
             _connectionFactory = connectionFactory;
         }
-
-        public Task<IDatabaseActionResponse> CreateUserAsync(UserEntity user)
+        public Task<IDatabaseActionResponse> CreateLoanAsync(LoanEntity loan)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IDatabaseActionResponse> DeleteUserAsync(string userId)
+        public Task<IDatabaseActionResponse> DeleteLoanAsync(string loanId)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IDatabaseOperationResult<UserEntity>> GetUserByIdAsync(string userId)
+        public Task<IDatabaseOperationResult<LoanEntity>> GetLoanByIdAsync(string loanId)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IDatabaseOperationResult<List<UserEntity>>> GetUserPaginatedAsync(int pageNumber, int pageSize, string? search)
+        public Task<IDatabaseOperationResult<List<LoanEntity>>> GetLoanPaginatedAsync(int pageNumber, int pageSize, string? search)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IDatabaseActionResponse> UpdateUserAsync(UserEntity user)
+        public Task<IDatabaseActionResponse> UpdateLoanAsync(LoanEntity loan)
         {
             throw new NotImplementedException();
         }

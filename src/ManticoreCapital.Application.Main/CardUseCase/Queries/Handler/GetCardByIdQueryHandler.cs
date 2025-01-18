@@ -4,7 +4,7 @@ using MediatR;
 
 namespace ManticoreCapital.Application.Main.CardUseCase.Queries.Handler
 {
-    public class GetCardByIdQueryHandler : IRequestHandler<GetCardByIdQuery, IDatabaseOperationResult<CardResponseDTO>
+    public class GetCardByIdQueryHandler : IRequestHandler<GetCardByIdQuery, IDatabaseOperationResult<CardResponseDTO>>
     {
         public GetCardByIdQueryHandler()
         {

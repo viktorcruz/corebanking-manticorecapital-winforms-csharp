@@ -3,7 +3,7 @@ using ManticoreCapital.Transversal.Interfaces;
 
 namespace ManticoreCapital.Infrastructure.Interfaces
 {
-    public interface IAuditLog
+    public interface IAuditLogRepository
     {
         // Commands
         Task<IDatabaseActionResponse> CreateAuditLogAsync(AuditLogEntity audit);

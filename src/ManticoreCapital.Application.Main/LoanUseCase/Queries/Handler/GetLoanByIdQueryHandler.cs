@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ManticoreCapital.Application.Main.LoanUseCase.Queries.Handler
 {
-    public class GetLoanByIdQueryHandler : IRequestHandler<GetLoanByIdQuery, IDatabaseOperationResult<LoanResponseDTO>
+    public class GetLoanByIdQueryHandler : IRequestHandler<GetLoanByIdQuery, IDatabaseOperationResult<LoanResponseDTO>>
     {
         public GetLoanByIdQueryHandler()
         {

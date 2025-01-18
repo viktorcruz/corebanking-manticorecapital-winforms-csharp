@@ -4,7 +4,7 @@ using MediatR;
 
 namespace ManticoreCapital.Application.Main.BranchUseCase.Queries.Handler
 {
-    public class GetBranchPaginatedQueryHandler : IRequestHandler<GetBranchPaginatedQuery, IDatabaseOperationResult<List<BranchResponseDTO>>
+    public class GetBranchPaginatedQueryHandler : IRequestHandler<GetBranchPaginatedQuery, IDatabaseOperationResult<List<BranchResponseDTO>>>
     {
         public GetBranchPaginatedQueryHandler()
         {
