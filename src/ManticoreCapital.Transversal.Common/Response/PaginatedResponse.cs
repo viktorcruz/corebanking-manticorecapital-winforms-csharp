@@ -2,7 +2,7 @@
 {
     public class PaginatedResponse<T>
     {
-        public IEnumerable<T> Results { get; }
+        public IEnumerable<T>? Results { get; }
         public int TotalItemCount { get; }
         public int ItemsPerPage { get; }
         public int CurrentPage { get; }

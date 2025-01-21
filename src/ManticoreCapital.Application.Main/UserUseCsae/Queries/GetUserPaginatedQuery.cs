@@ -1,10 +1,11 @@
 ﻿using ManticoreCapital.Application.Main.UserUseCsae.Dtos;
-using ManticoreCapital.Transversal.Interfaces;
+using ManticoreCapital.Domain.Entities;
+using ManticoreCapital.Transversal.Common.Response;
 using MediatR;
 
 namespace ManticoreCapital.Application.Main.UserUseCsae.Queries
 {
-    public class GetUserPaginatedQuery : IRequest<(IDatabaseOperationResult<List<UserResponseDTO>>, int)>
+    public class GetUserPaginatedQuery : IRequest<(List<UserResponseDTO>, int)>
     {
         public required RepositoryType DatabaseAdapter { get; set; }
         public int PageNumber { get; set; }

@@ -1,4 +1,4 @@
-﻿using ManticoreCapital.Infrastructure.Domain.Entities;
+﻿using ManticoreCapital.Domain.Entities;
 using ManticoreCapital.Transversal.Interfaces;
 
 namespace ManticoreCapital.Infrastructure.Interfaces

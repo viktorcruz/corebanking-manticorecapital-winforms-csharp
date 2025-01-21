@@ -9,10 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManticoreCapital.Infrastruc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManticoreCapital.Infrastructure.Data", "src\ManticoreCapital.Infrastructure.Data\ManticoreCapital.Infrastructure.Data.csproj", "{08D8EFBE-20FF-46D6-858E-47E3C883CD3F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManticoreCapital.Infrastructure.Domain.Core", "src\ManticoreCapital.Infrastructure.Domain.Core\ManticoreCapital.Infrastructure.Domain.Core.csproj", "{877FBA8A-4E79-4FB5-94D6-27CF89F9B0C0}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManticoreCapital.Infrastructure.Domain.Entities", "src\ManticoreCapital.Infrastructure.Domain.Entities\ManticoreCapital.Infrastructure.Domain.Entities.csproj", "{2DA1B8CE-5B9D-4A46-89AE-7F97026F6AB3}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManticoreCapital.Transversal.Interfaces", "src\ManticoreCapital.Transversal.Interfaces\ManticoreCapital.Transversal.Interfaces.csproj", "{4286CA12-D5ED-480C-8A56-AF65CA1402D9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManticoreCapital.Transversal.Common", "src\ManticoreCapital.Transversal.Common\ManticoreCapital.Transversal.Common.csproj", "{CE62D747-B0CB-43D6-B9F7-5C0405571227}"
@@ -29,7 +25,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManticoreCapital.Transversa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManticoreCapital.Infrastructure.IoC", "src\ManticoreCapital.Infrastructure.IoC\ManticoreCapital.Infrastructure.IoC.csproj", "{BC741044-86CF-40E8-9C30-881C746ADBC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManticoreCapital.Application.IoC", "src\ManticoreCapital.Application.IoC\ManticoreCapital.Application.IoC.csproj", "{AA1A893F-4B68-498A-AEAB-B1F4F69D88BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManticoreCapital.Application.IoC", "src\ManticoreCapital.Application.IoC\ManticoreCapital.Application.IoC.csproj", "{AA1A893F-4B68-498A-AEAB-B1F4F69D88BC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManticoreCapital.Application.Mapping", "src\ManticoreCapital.Application.Mapping\ManticoreCapital.Application.Mapping.csproj", "{9536F1EF-A69B-4860-8C61-1DFF1218DDC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManticoreCapital.Domain.Entities", "src\ManticoreCapital.Domain.Entities\ManticoreCapital.Domain.Entities.csproj", "{2EA3BDD0-B4AB-460E-9652-AC54A6DFE22A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,14 +49,6 @@ Global
 		{08D8EFBE-20FF-46D6-858E-47E3C883CD3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08D8EFBE-20FF-46D6-858E-47E3C883CD3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08D8EFBE-20FF-46D6-858E-47E3C883CD3F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{877FBA8A-4E79-4FB5-94D6-27CF89F9B0C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{877FBA8A-4E79-4FB5-94D6-27CF89F9B0C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{877FBA8A-4E79-4FB5-94D6-27CF89F9B0C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{877FBA8A-4E79-4FB5-94D6-27CF89F9B0C0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2DA1B8CE-5B9D-4A46-89AE-7F97026F6AB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2DA1B8CE-5B9D-4A46-89AE-7F97026F6AB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2DA1B8CE-5B9D-4A46-89AE-7F97026F6AB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2DA1B8CE-5B9D-4A46-89AE-7F97026F6AB3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4286CA12-D5ED-480C-8A56-AF65CA1402D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4286CA12-D5ED-480C-8A56-AF65CA1402D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4286CA12-D5ED-480C-8A56-AF65CA1402D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -93,6 +85,14 @@ Global
 		{AA1A893F-4B68-498A-AEAB-B1F4F69D88BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA1A893F-4B68-498A-AEAB-B1F4F69D88BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA1A893F-4B68-498A-AEAB-B1F4F69D88BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9536F1EF-A69B-4860-8C61-1DFF1218DDC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9536F1EF-A69B-4860-8C61-1DFF1218DDC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9536F1EF-A69B-4860-8C61-1DFF1218DDC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9536F1EF-A69B-4860-8C61-1DFF1218DDC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EA3BDD0-B4AB-460E-9652-AC54A6DFE22A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EA3BDD0-B4AB-460E-9652-AC54A6DFE22A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EA3BDD0-B4AB-460E-9652-AC54A6DFE22A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EA3BDD0-B4AB-460E-9652-AC54A6DFE22A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,6 +9,7 @@ namespace ManticoreCapital.Application.Main.UserUseCsae.Queries
         public string UserName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public string RFC { get; set; }
         public string Role { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }

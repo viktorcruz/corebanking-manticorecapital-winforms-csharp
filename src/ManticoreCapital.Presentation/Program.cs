@@ -1,3 +1,4 @@
+using ManticoreCapital.Application.IoC;
 using ManticoreCapital.Application.Main.UserUseCsae.Queries.Handler;
 using ManticoreCapital.Infrastructure.IoC;
 using ManticoreCapital.Presentation.Startup;
@@ -24,6 +25,7 @@ namespace ManticoreCapital.Presentation
 
 
             var serviceProvider = new ServiceCollection()
+                .AddCustomApplicationIoC()
                 .AddCustomInfrastructureIoC(configuration)
                 .AddCustomTransversalIoC(configuration)
                 .AddMediatR(c => c.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()))

@@ -1,4 +1,5 @@
-﻿using ManticoreCapital.Infrastructure.Domain.Entities;
+﻿using ManticoreCapital.Domain.Entities;
+using ManticoreCapital.Transversal.Common.Response;
 using ManticoreCapital.Transversal.Interfaces;
 
 namespace ManticoreCapital.Infrastructure.Interfaces
@@ -13,6 +14,6 @@ namespace ManticoreCapital.Infrastructure.Interfaces
 
         // Queries
         Task<IDatabaseOperationResult<UserEntity>> GetUserByIdAsync(string userId);
-        Task<IDatabaseOperationResult<List<UserEntity>>> GetUserPaginatedAsync(int pageNumber, int pageSize, string? search);
+        Task<PaginatedResponse<UserEntity>> GetUserPaginatedAsync(int pageNumber, int pageSize, string? search);
     }
 }

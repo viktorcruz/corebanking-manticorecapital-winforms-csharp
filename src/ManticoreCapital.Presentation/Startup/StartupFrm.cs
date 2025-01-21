@@ -17,12 +17,19 @@ namespace ManticoreCapital.Presentation.Startup
         private readonly IMediator _mediator;
         private readonly Dictionary<Type, Form> _forms = new();
         private UsersFrm? _usersFrm = null;
+        private CustomersFrm? CustomersFrm = null;
+        private AccountsFrm? AccountsFrm = null;
 
         public StartupFrm(IMediator mediator)
         {
             InitializeComponent();
 
             _mediator = mediator;
+        }
+
+        private void StartupFrm_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void OpenForm<T>(Func<Form> createForm) where T : Form
@@ -64,7 +71,7 @@ namespace ManticoreCapital.Presentation.Startup
             }
         }
 
-        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
+        private void usersToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             try
             {
@@ -75,5 +82,31 @@ namespace ManticoreCapital.Presentation.Startup
 
             }
         }
+
+        private void customersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenForm<CustomersFrm>(() => new CustomersFrm(_mediator));
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void accountsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenForm<AccountsFrm>(() => new AccountsFrm(_mediator));
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+
     }
 }

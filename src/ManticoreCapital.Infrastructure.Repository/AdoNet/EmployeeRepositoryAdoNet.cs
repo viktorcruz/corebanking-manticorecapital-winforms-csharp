@@ -1,4 +1,4 @@
-﻿using ManticoreCapital.Infrastructure.Domain.Entities;
+﻿using ManticoreCapital.Domain.Entities;
 using ManticoreCapital.Infrastructure.Interfaces;
 using ManticoreCapital.Transversal.Interfaces;
 using System;

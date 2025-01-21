@@ -1,21 +1,20 @@
 ﻿using ManticoreCapital.Transversal.Interfaces;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ManticoreCapital.Application.Main.UserUseCsae.Commands
 {
     public class CreateUserCommand : IRequest<IDatabaseActionResponse>
     {
-        //public string Id { get; set; }
-        public string UserName { get; set; }
+        public required RepositoryType DatabaseAdapter { get; set; }
+        public string? Id { get; set; }
+        public string Name { get; set; }
+        public string LastName { get; set; }
         public string Email { get; set; }
-        public string Password { get; set; }
-        public string Role { get; set; }
-        public DateTime CreateAt { get; set; }
-        public DateTime? UpdatedAt { get; set; }
+        public string RFC { get; set; }
+        public string? PasswordHash { get; set; }
+        public RoleType Role { get; set; }
+        public bool IsActive { get; set; }
+        public DateTime? CreatedAt { get; set; } 
+        public DateTime? LastUpdatedAt { get; set; }
     }
 }

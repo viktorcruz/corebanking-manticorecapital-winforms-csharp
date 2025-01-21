@@ -1,5 +1,6 @@
-﻿using ManticoreCapital.Infrastructure.Domain.Entities;
+﻿using ManticoreCapital.Domain.Entities;
 using ManticoreCapital.Infrastructure.Interfaces;
+using ManticoreCapital.Transversal.Common.Response;
 using ManticoreCapital.Transversal.Interfaces;
 
 namespace ManticoreCapital.Infrastructure.Repositories.Dapper
@@ -28,7 +29,7 @@ namespace ManticoreCapital.Infrastructure.Repositories.Dapper
             throw new NotImplementedException();
         }
 
-        public Task<IDatabaseOperationResult<List<UserEntity>>> GetUserPaginatedAsync(int pageNumber, int pageSize, string? search)
+        public Task<PaginatedResponse<UserEntity>> GetUserPaginatedAsync(int pageNumber, int pageSize, string? search)
         {
             throw new NotImplementedException();
         }

@@ -4,10 +4,11 @@ project.lock.json
 .DS_Store
 *.pyc
 nupkg/
-.pdf
+*.pdf
+*.exe
 
 # Visual Studio Code
-.vscode
+*.vscode
 
 # Rider
 .idea
