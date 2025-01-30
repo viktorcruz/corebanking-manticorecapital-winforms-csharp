@@ -52,6 +52,8 @@
             btnSave = new Button();
             btnBack = new Button();
             pnlUsersFrmInsertBody = new Panel();
+            txtNewRFC = new TextBox();
+            lblNewRFC = new Label();
             pbxCreateQrCode = new PictureBox();
             txtCreateLastName = new TextBox();
             lblLastName = new Label();
@@ -87,8 +89,6 @@
             label6 = new Label();
             label7 = new Label();
             txtEditId = new TextBox();
-            txtNewRFC = new TextBox();
-            lblNewRFC = new Label();
             tlpUsers.SuspendLayout();
             pnlUsersFrmTop.SuspendLayout();
             pnlUsersFrmBottom.SuspendLayout();
@@ -393,11 +393,30 @@
             pnlUsersFrmInsertBody.Size = new Size(1049, 506);
             pnlUsersFrmInsertBody.TabIndex = 1;
             // 
+            // txtNewRFC
+            // 
+            txtNewRFC.Font = new Font("Noto Sans", 10.2F);
+            txtNewRFC.Location = new Point(133, 194);
+            txtNewRFC.Name = "txtNewRFC";
+            txtNewRFC.Size = new Size(473, 31);
+            txtNewRFC.TabIndex = 45;
+            // 
+            // lblNewRFC
+            // 
+            lblNewRFC.AutoSize = true;
+            lblNewRFC.Font = new Font("Noto Sans", 10.2F);
+            lblNewRFC.Location = new Point(21, 199);
+            lblNewRFC.Name = "lblNewRFC";
+            lblNewRFC.Size = new Size(43, 26);
+            lblNewRFC.TabIndex = 46;
+            lblNewRFC.Text = "RFC";
+            // 
             // pbxCreateQrCode
             // 
-            pbxCreateQrCode.Location = new Point(656, 71);
+            pbxCreateQrCode.BorderStyle = BorderStyle.FixedSingle;
+            pbxCreateQrCode.Location = new Point(650, 71);
             pbxCreateQrCode.Name = "pbxCreateQrCode";
-            pbxCreateQrCode.Size = new Size(361, 335);
+            pbxCreateQrCode.Size = new Size(371, 371);
             pbxCreateQrCode.TabIndex = 42;
             pbxCreateQrCode.TabStop = false;
             // 
@@ -612,9 +631,10 @@
             // 
             // pbxEditQrCode
             // 
-            pbxEditQrCode.Location = new Point(656, 71);
+            pbxEditQrCode.BorderStyle = BorderStyle.FixedSingle;
+            pbxEditQrCode.Location = new Point(650, 71);
             pbxEditQrCode.Name = "pbxEditQrCode";
-            pbxEditQrCode.Size = new Size(361, 335);
+            pbxEditQrCode.Size = new Size(371, 371);
             pbxEditQrCode.TabIndex = 42;
             pbxEditQrCode.TabStop = false;
             // 
@@ -738,32 +758,14 @@
             txtEditId.Size = new Size(560, 31);
             txtEditId.TabIndex = 27;
             // 
-            // txtNewRFC
-            // 
-            txtNewRFC.Font = new Font("Noto Sans", 10.2F);
-            txtNewRFC.Location = new Point(133, 194);
-            txtNewRFC.Name = "txtNewRFC";
-            txtNewRFC.Size = new Size(473, 31);
-            txtNewRFC.TabIndex = 45;
-            // 
-            // lblNewRFC
-            // 
-            lblNewRFC.AutoSize = true;
-            lblNewRFC.Font = new Font("Noto Sans", 10.2F);
-            lblNewRFC.Location = new Point(21, 199);
-            lblNewRFC.Name = "lblNewRFC";
-            lblNewRFC.Size = new Size(43, 26);
-            lblNewRFC.TabIndex = 46;
-            lblNewRFC.Text = "RFC";
-            // 
             // UsersFrm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1147, 710);
+            Controls.Add(tlpUserFrmEdit);
             Controls.Add(tlpUserFrmInsert);
             Controls.Add(tlpUsers);
-            Controls.Add(tlpUserFrmEdit);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "UsersFrm";

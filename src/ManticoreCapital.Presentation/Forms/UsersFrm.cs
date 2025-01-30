@@ -227,6 +227,8 @@ namespace ManticoreCapital.Presentation.Forms
 
                     _usersDto = users.Item1;   // Lista de usuarios
                     _totalCount = users.Item2; // Total de registros
+                    
+                    UpdatedPaginationInfo();
 
                     Console.WriteLine($"Total Users: {_totalCount}");
                     foreach (var user in _usersDto)
@@ -253,7 +255,6 @@ namespace ManticoreCapital.Presentation.Forms
             }
         }
 
-
         private async Task RefreshData(string search = "")
         {
             await LoadPaginatedData(search);
@@ -261,7 +262,7 @@ namespace ManticoreCapital.Presentation.Forms
         #endregion
 
         #region Logic Methods
-        private void GoToMainPanel()
+        private async void GoToMainPanel()
         {
             tlpUserFrmInsert.Visible = false;
             tlpUsers.Visible = true;
@@ -271,7 +272,7 @@ namespace ManticoreCapital.Presentation.Forms
             ClearControls(tlpUserFrmEdit);
             ClearControls(tlpUserFrmInsert);
 
-            UpdateGrid();
+            await RefreshData();
         }
         private void GoToNewPanel()
         {
@@ -355,22 +356,6 @@ namespace ManticoreCapital.Presentation.Forms
             }
 
             return panel;
-        }
-
-        private async void UpdateGrid()
-        {
-            int skip = (_currentPage - 1) * _pageSize;
-            var paginatedData = _usersDto.Skip(skip).Take(_pageSize).ToList();
-
-            dgvUsers.DataSource = paginatedData;
-
-            var query = new GetUserPaginatedQuery { DatabaseAdapter = RepositoryType.ADO, PageNumber = _currentPage, PageSize = _pageSize, Search = "" };
-            var users = await _mediator.Send(query);
-            _usersDto = users.Item1;
-            _totalCount = users.Item2;
-
-            //dgvUsers.UpdateGrid(_usersDto, _currentPage, _pageSize, out _records);
-            UpdatedPaginationInfo();
         }
 
         private void UpdatedPaginationInfo()
@@ -464,7 +449,7 @@ namespace ManticoreCapital.Presentation.Forms
             QRCodeGenerator qrGenerator = new QRCodeGenerator();
             QRCodeData codeData = qrGenerator.CreateQrCode(data, QRCodeGenerator.ECCLevel.Q);
             QRCode qrCode = new QRCode(codeData);
-            Bitmap qrCodeImage = qrCode.GetGraphic(8);
+            Bitmap qrCodeImage = qrCode.GetGraphic(9);
 
             string folderPath = AppDomain.CurrentDomain.BaseDirectory;
             if (!Directory.Exists(folderPath))
@@ -495,12 +480,12 @@ namespace ManticoreCapital.Presentation.Forms
             var user = _usersDto.FirstOrDefault(x => x.Id == id);
             if (user != null)
             {
+                var qrCode = GenerateQRCode(user.Id);
                 txtEditId.Text = user.Id;
                 txtEditEmail.Text = user.Email;
                 txtEditName.Text = user.Name;
                 txtEditLastName.Text = user.LastName;
                 ckbEditActive.Checked = user.IsActive;
-                var qrCode = GenerateQRCode(txtNewId.Text);
                 pbxEditQrCode.Visible = true;
                 pbxEditQrCode.Image = qrCode;
 
@@ -550,26 +535,6 @@ namespace ManticoreCapital.Presentation.Forms
             };
         }
 
-        //private void DataGridView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        //{
-        //    DataGridView dgv = sender as DataGridView;
-
-        //    if (dgv?.Columns[e.ColumnIndex] != null)
-        //    {
-        //        string columnName = dgv.Columns[e.ColumnIndex].Name;
-
-        //        string sortDirection = dgv.Tag as string == "ASC" ? "DESC" : "ASC";
-        //        dgv.Tag = sortDirection;
-
-        //        DataView dv = (_dataTable as DataTable)?.DefaultView;
-        //        if (dv != null)
-        //        {
-        //            dv.Sort = $"{columnName} {sortDirection}";
-        //            dgv.DataSource = dv;
-        //        }
-        //    }
-        //}
-
         private void dgvUsers_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
             var dgv = sender as DataGridView;
@@ -616,7 +581,7 @@ namespace ManticoreCapital.Presentation.Forms
             if (_currentPage < totalPage)
             {
                 _currentPage++;
-                //LoadData();
+                Clean();
                 await RefreshData();
             }
         }
@@ -626,7 +591,7 @@ namespace ManticoreCapital.Presentation.Forms
             if (_currentPage > 1)
             {
                 _currentPage--;
-                //LoadData();
+                Clean();
                 await RefreshData();
             }
         }
@@ -657,7 +622,6 @@ namespace ManticoreCapital.Presentation.Forms
                 {
                     await DeleteUser(userId);
                 }
-
             }
         }
 
@@ -734,7 +698,7 @@ namespace ManticoreCapital.Presentation.Forms
 
         private async Task SearchUsers()
         {
-            string filter = txtSearch.Text?.Trim().ToLower();
+            string? filter = txtSearch.Text?.Trim().ToLower();
 
             if (string.IsNullOrEmpty(filter))
             {
@@ -800,9 +764,15 @@ namespace ManticoreCapital.Presentation.Forms
             return filteredUsers;
         }
 
-        private async void btnReload_Click(object sender, EventArgs e)
+        private void Clean()
         {
             txtSearch.Text = "";
+            txtId.Text = "";
+        }
+
+        private async void btnReload_Click(object sender, EventArgs e)
+        {
+            Clean();
             await RefreshData();
         }
 
@@ -814,7 +784,7 @@ namespace ManticoreCapital.Presentation.Forms
             }
         }
 
-        private async Task<T> RunWithProgressAsync<T>(Func<CancellationToken, Task<T>> operation, string progressMessage)
+        private async Task<T?> RunWithProgressAsync<T>(Func<CancellationToken, Task<T>> operation, string progressMessage)
         {
             _cancellationTokenSource = new CancellationTokenSource();
 

@@ -145,18 +145,11 @@ Victor Cruz
 │   │   ├───Data
 │   │   ├───Interfaces
 │   │   ├───IoC
-│   │   ├───Repositories
-│   │   │   ├───AdoNet
-│   │   │   └───Dapper
-│   │   └───Ventas
-│   │       ├───Commands
-│   │       └───Queries
-│   │
+│   │   └───Repositories
+│   │       ├───AdoNet
+│   │       └───Dapper
 │   ├─── Domain
 │   │   └───Entities
-│   │
-│   ├─── Presentation
-│   │   └───Forms
 │   │
 │   ├─── Presentation
 │   │   ├───Forms
